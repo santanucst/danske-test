@@ -1,8 +1,7 @@
 package com.app.service;
 
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import com.app.dto.ElementDTO;
 import com.app.dto.ResultPathDTO;
@@ -82,22 +81,21 @@ public class AppLogicService {
 		}
 
 		System.out.println("");
-		Set<ElementDTO> resultSet = new TreeSet<>();
-		recordList.get(recordList.size() - 1).forEach(elm -> {
+		List<ElementDTO> resultElementList = recordList.get(recordList.size() - 1);
+		resultElementList.forEach(elm -> {
 			System.out.print(elm.getElement() + "|");
 			System.out.print(elm.getSelected() + "|");
 			if (elm.getSelected()) {
 				System.out.print(" Sum: " + elm.getUpdatedElement() + " | ");
 				System.out.print(
 						"Selected Elements(" + elm.getSelectedElements().size() + ") - " + elm.getSelectedElements());
-				resultSet.add(elm);
 			}
 			System.out.println("");
 		});
 		System.out.println("");
-
-		ElementDTO elm = resultSet.iterator().next();
-		return new ResultPathDTO(elm.getUpdatedElement(), elm.getSelectedElements());
+		
+		ElementDTO resultElm = resultElementList.stream().sorted().collect(Collectors.toList()).get(0);
+		return new ResultPathDTO(resultElm.getUpdatedElement(), resultElm.getSelectedElements());
 	}
 
 	private static Boolean validateCriteria(Integer parent, Integer child) {

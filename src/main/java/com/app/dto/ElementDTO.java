@@ -10,9 +10,6 @@ public class ElementDTO implements Comparable<ElementDTO> {
 	private List<Integer> selectedElements;
 	private Integer updatedElement;
 	
-	public ElementDTO() {
-	}
-	
 	public ElementDTO(Integer element) {
 		this.element = element;
 		this.selected = false;
