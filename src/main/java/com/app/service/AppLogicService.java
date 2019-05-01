@@ -80,20 +80,7 @@ public class AppLogicService {
 			}
 		}
 
-		System.out.println("");
 		List<ElementDTO> resultElementList = recordList.get(recordList.size() - 1);
-		resultElementList.forEach(elm -> {
-			System.out.print(elm.getElement() + "|");
-			System.out.print(elm.getSelected() + "|");
-			if (elm.getSelected()) {
-				System.out.print(" Sum: " + elm.getUpdatedElement() + " | ");
-				System.out.print(
-						"Selected Elements(" + elm.getSelectedElements().size() + ") - " + elm.getSelectedElements());
-			}
-			System.out.println("");
-		});
-		System.out.println("");
-		
 		ElementDTO resultElm = resultElementList.stream().sorted().collect(Collectors.toList()).get(0);
 		return new ResultPathDTO(resultElm.getUpdatedElement(), resultElm.getSelectedElements());
 	}

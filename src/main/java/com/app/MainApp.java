@@ -17,7 +17,6 @@ public class MainApp {
 			recordList = DataFormatterUtil.format(recordList);
 			
 			ResultPathDTO result = AppLogicService.traverse(recordList);
-			System.out.println("======= RESULT =======");
 			System.out.println("Max Sum: " +result.getMaxSum());
 			System.out.println("Path: " +result.getSelectedNodes());
 		}
