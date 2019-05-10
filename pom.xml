@@ -12,11 +12,18 @@
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<junit.jupiter.version>5.4.0</junit.jupiter.version>
+		<junit.jupiter.version>5.4.2</junit.jupiter.version>
+		<junit.jupiter.platform.version>1.4.2</junit.jupiter.platform.version>
 	</properties>
 
 	<dependencies>
 
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
@@ -24,12 +31,12 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>${junit.jupiter.platform.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
-	
+
 </project>
