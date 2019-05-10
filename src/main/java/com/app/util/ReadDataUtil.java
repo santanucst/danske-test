@@ -12,8 +12,8 @@ import com.app.dto.ElementDTO;
 
 public class ReadDataUtil {
 	
-	public static List<List<ElementDTO>> read() {
-		String filePath = AppConstant.FILE_PATH + AppConstant.FILE_NAME;
+	public static List<List<ElementDTO>> read(String fileName) {
+		String filePath = AppConstant.FILE_PATH + fileName;
 		File file = new File(filePath); 
 		
 		List<List<ElementDTO>> recordList = new ArrayList<>();
@@ -41,7 +41,7 @@ public class ReadDataUtil {
 		  
 		  return recordList;
 		} catch(IOException ioe) {
-			ioe.printStackTrace();
+//			ioe.printStackTrace();
 			return null;
 		}
 	}

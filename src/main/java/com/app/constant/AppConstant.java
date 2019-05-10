@@ -3,6 +3,7 @@ package com.app.constant;
 public interface AppConstant {
 	
 	String FILE_PATH = "resource/";
-	String FILE_NAME = "test_data.txt";
+	String TEST_FILE = "test_data.txt";
+	String SAMPLE_FILE = "sample_data.txt";
 	
 }

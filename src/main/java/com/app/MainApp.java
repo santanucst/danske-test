@@ -2,6 +2,7 @@ package com.app;
 
 import java.util.List;
 
+import com.app.constant.AppConstant;
 import com.app.dto.ElementDTO;
 import com.app.dto.ResultPathDTO;
 import com.app.service.AppLogicService;
@@ -10,7 +11,7 @@ import com.app.util.ReadDataUtil;
 
 public class MainApp {
 	public static void main(String[] args) {
-		List<List<ElementDTO>> recordList = ReadDataUtil.read();
+		List<List<ElementDTO>> recordList = ReadDataUtil.read(AppConstant.TEST_FILE);
 		if (recordList == null) {
 			System.out.println("Record File is not found!");
 		} else {
